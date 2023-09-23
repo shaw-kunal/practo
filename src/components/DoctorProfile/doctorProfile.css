@@ -1,0 +1,106 @@
+.profileConainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    /* background-color: antiquewhite; */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 80%;
+}
+
+.left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+}
+
+.doctorImage {
+    width: 200px;
+    border-radius: 50%;
+
+}
+
+.middle {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+
+
+
+}
+
+.middle .name {
+    color: salmon;
+    font-size: 20px;
+
+}
+
+.middle .specialist {
+    font-family: 'Times New Roman', Times, serif;
+    font: weight 300;
+    font-size: 17px;
+    color: grey;
+}
+
+.middle .experience {
+    font-family: 'Times New Roman', Times, serif;
+    font: weight 200;
+    color: rgb(119, 115, 115);
+}
+
+.middle .city {
+    font: weight 200;
+    font-size: 15px;
+    color: black;
+}
+
+.middle .fees {
+    font-family: 'Times New Roman', Times, serif;
+    font: weight 200;
+    color: rgb(13, 13, 13);
+    
+}
+
+.middle .partition {
+    height: 1px;
+
+    border: 1px dashed gery;
+}
+
+.middle .rating{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 400;
+    background-color: #0c9c22;
+
+    font-size: 15px;
+    color: white;
+    width: 100px;
+    padding: 3px;
+    border-radius:3px;
+}
+
+
+
+.right {
+    flex: 1;
+}
+
+.meetClinic{
+    background-color:#5BD1D7 ;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    font-family: serif;
+    padding: 4px 8px;
+}
+.meetClinic:hover{
+    background-color: #35f2fc;
+}

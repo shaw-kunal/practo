@@ -1,0 +1,9 @@
+.filterContainer{
+    flex:1;
+
+    border-right: 0.3px solid #e4dddd;
+    min-height: 100vw;
+    padding: 50px 0px 0px 50px;
+
+}
+

@@ -1,0 +1,38 @@
+.SearchContainer {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 20px auto 10px;
+    flex-wrap: wrap;
+}
+
+.SearchContainer>div {
+   min-width: 400px;
+   width: fit-content;
+}
+
+.searchBth {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px;
+    color: white;
+    background-color: #434ea2;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid white;
+    transition: all 1s ease-in-out;
+    font-size: 20px;
+
+
+}
+
+
+.searchBth:hover {
+    background-color: white;
+    color: #434ea2;
+    border: 1px solid #434ea2;
+
+
+}
