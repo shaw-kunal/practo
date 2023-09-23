@@ -1,0 +1,33 @@
+.offerContainer {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0 20px 0px;
+    flex-direction: column;
+
+}
+
+.offerimg {
+    width: 80%;
+    margin-bottom: 50px;
+}
+.DoctorContainer{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+
+
+}
+.listItem{
+    
+    width: 180px;
+    height: 400px;
+    /* background-color: aqua; */
+
+}
+.listItem>img{
+    width: 150px;
+    height: 200px;
+}

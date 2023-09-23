@@ -1,0 +1,64 @@
+.mainContainer
+{
+    margin-bottom: 100px;
+
+}
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: #434ea2;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+       position: fixed;
+       top: 0px;
+       z-index: 100;
+    
+}
+.logo{
+    flex:1;
+    margin-left: 20px;
+
+}
+.itemlist{
+    flex:3;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap:20px;
+}
+.itemlist>span{
+    padding: 5px 10px;
+    cursor: pointer;
+
+}
+.itemlist > span:first-child {
+    border-bottom: 2px solid #434ea2;
+}
+
+.loginbtn{
+    flex:1;
+    display: flex;
+    justify-content: center;
+}
+.loginbtn>button{
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    padding:10px 10px;
+    font-size: 1rem;
+    color:#757171;
+    transition: all 1s ease-in;
+    border:1px solid rgb(240, 238, 238);
+    cursor: pointer;
+}
+.loginbtn>button:hover{
+    color:#4492df;
+
+    border:1px solid #4492df;
+
+
+}

@@ -1,10 +1,12 @@
-
+import Home from "./pages/Home/Home";
+import "./app.css"
 
 function App() {
   return (
-    <h1>
-    hello kunal
-    </h1>
+    <div className="appContainer">
+      <Home/>
+    </div>
+
   );
 }
 
