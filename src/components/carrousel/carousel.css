@@ -1,27 +1,81 @@
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 80px 0;
+  transition: all 0.5s ease-in-out; /* Add a transition for the transform property */
+
+}
+
 .carousel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .cards-container {
-    display: flex;
-  }
-  
-  .card {
-    width: 150px;
-    height: 200px;
-    margin: 0 10px;
-    border: 1px solid #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .prev-button,
-  .next-button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
+  display: flex;
+  overflow: hidden;
+  /* background-color: yellow; */
+  position: relative;
+
+}
+
+.carousel-card {
+  width: 250px;
+  height: 300px;
+  margin: 0 10px;
+  /* background-color: #742e2e; */
+}
+.slideImg{
+  width: 250px;
+  height: 200px;
+border-radius: 5px;
+}
+
+.carousel-button {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 10px;
+  position: absolute;
+  top: 80px;
+}
+
+.carousel-button.right {
+  position: absolute;
+  right: -10px;
+}
+
+.carousel-button.left {
+  position: absolute;
+  left: -10px;
+}
+
+.carousel-button:focus {
+  outline: none;
+}
+
+.carouselTitle{
+
+  text-align: center;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #646363;
+
+}
+.carouselTitle:hover{
+
+  color: rgb(9, 164, 164);
+  text-align: center;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+.carouseldesc{
+  margin: auto 10px;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}

@@ -1,0 +1,48 @@
+/* Footer Styles */
+.footer {
+    background-color: #28328c;
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+.footerContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    gap: 20px;
+    align-items: start;
+    justify-content: center;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+li:hover {
+    border-bottom: 0.1px solid white;
+}
+
+/* Add any additional styling you want */

@@ -6,6 +6,7 @@ import DoctorList from '../../components/doctorsList/DoctorList';
 import SearchBy from '../../components/SearchBy/SearchBy';
 import { Typography } from '@mui/material';
 import Carousel from '../../components/carrousel/Carousel';
+import Footer from '../../components/footer/Foote';
 
 // console.log(specialtiesArray);
 
@@ -90,7 +91,8 @@ const Home = () => {
         </div>
       </div>
 
-      {/* <Carousel /> */}
+      <Carousel />
+      <Footer/>
   
 
     </>
