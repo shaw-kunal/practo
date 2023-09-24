@@ -34,12 +34,12 @@
     gap: 20px;
 }
 
-.itemlist>span {
+.itemlist span {
     padding: 5px 10px;
     cursor: pointer;
 
 }
-.itemlist>span:hover {
+.itemlist span:hover {
   border-bottom: 1px solid #4492df;
 
 }
@@ -76,4 +76,5 @@
     outline: none;
     text-decoration: none;
     color:#434ea2;
+    
 }
