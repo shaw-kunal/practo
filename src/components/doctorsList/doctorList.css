@@ -1,3 +1,13 @@
 .profileListContaier{
     margin-top: 20px;
+display: flex;
+gap:10px;
+flex-direction: column;
+}
+.resultFound{
+    color: #636363;
+    font-size: 20px;
+    padding: 10px 10px;
+    border-bottom: 1px solid #e1dede;
+    width: max-content;
 }

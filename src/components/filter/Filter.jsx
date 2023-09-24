@@ -1,39 +1,35 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "./filter.css"
 import { Box, Checkbox, FormControlLabel, FormGroup, Radio, RadioGroup, Typography } from '@mui/material'
-import { CheckBox } from '@mui/icons-material'
+import { Context } from '../../context/Context'
+import { SetFees, SetGender, SetSort } from '../../context/Action'
 const Filter = () => {
-  const [fee, setFee] = useState('')
-  const [selectedGenders, setSelectedGenders] = useState([]);
-  const [sort, setSort] = useState('')
+  const [fee, setFee] = useState(0)
+  const [selectedGenders, setSelectedGenders] = useState(0);
+  const [sortBy, setSortBy] = useState(0);
+
+  const {sort,dispatch,fees,gender} =useContext(Context);
 
   const handlefeeChange = (event) => {
+    event.preventDefault();
     setFee(event.target.value);
+    dispatch(SetFees(event.target.value));
   }
 
-  const handleCheckboxChange = (event) => {
-    const { name, checked } = event.target;
-
-    // If the checkbox is checked, add the gender to the selectedGenders array; otherwise, remove it.
-    if (checked) {
-      setSelectedGenders([...selectedGenders, name]);
-    } else {
-      setSelectedGenders(selectedGenders.filter((gender) => gender !== name));
-    }
-  }
 
   const handleSortChange = (event) => {
-    setSort(event.target.value);
+    setSortBy(event.target.value);
+    dispatch(SetSort(event.target.value));
+
+  }
+
+  const handleGenderChange=(event)=>{
+    setSelectedGenders(event.target.value);
+    dispatch(SetGender(event.target.value));
 
   }
 
 
-
-
-
-  console.log(selectedGenders)
-  console.log(fee)
-  console.log(sort)
 
   return (
     <div className='filterContainer'>
@@ -53,13 +49,15 @@ const Filter = () => {
         <RadioGroup
           aria-label='sort'
           name='sort'
-          value={sort}
+          value={sortBy}
           onChange={handleSortChange}
+
         >
-          <FormControlLabel value="low-to-high" control={<Radio />} label="Low to high" />
-          <FormControlLabel value="high-to-low" control={<Radio />} label="High to Low" />
-          <FormControlLabel value="YOE" control={<Radio />} label="Year of Experience" />
-          <FormControlLabel value="Recommendation" control={<Radio />} label="Recommendation" />
+          {/* <FormControlLabel value="0" control={<Radio />} label="All" /> */}
+          <FormControlLabel value="1" control={<Radio />} label="Low to high" />
+          <FormControlLabel value="2" control={<Radio />} label="High to Low" />
+          <FormControlLabel value="3" control={<Radio />} label="Year of Experience" />
+          <FormControlLabel value="4" control={<Radio />} label="Recommendation" />
         </RadioGroup>
       </Box>
 
@@ -67,7 +65,6 @@ const Filter = () => {
         padding:"10px 0px",
         display:"flex",
         borderBottom:"1px solid #e4dddd"
-
       }}>
         <Typography variant="h6" component="h2"width={100} >
           Fee:
@@ -78,10 +75,12 @@ const Filter = () => {
           value={fee}
           onChange={handlefeeChange}
         >
-          <FormControlLabel value="free" control={<Radio />} label="Free" space />
-          <FormControlLabel value="1-200" control={<Radio />} label="1-200" />
-          <FormControlLabel value="201-501" control={<Radio />} label="201-500" />
-          <FormControlLabel value="501+" control={<Radio />} label="501" />
+
+          <FormControlLabel value="0" control={<Radio />} label="All" />
+          <FormControlLabel value="1" control={<Radio />} label="Free" />
+          <FormControlLabel value="2" control={<Radio />} label="1-200" />
+          <FormControlLabel value="3" control={<Radio />} label="201-500" />
+          <FormControlLabel value="4" control={<Radio />} label="501" />
         </RadioGroup>
       </Box>
 
@@ -93,17 +92,16 @@ const Filter = () => {
 
       }}>
         <Typography variant="h6" width={100}>Gender :</Typography>
-        <FormGroup>
-          <FormControlLabel
-            control={<Checkbox checked={selectedGenders.includes('male')} onChange={handleCheckboxChange} name="male" />}
-            label="Male"
-          />
-          <FormControlLabel
-            control={<Checkbox checked={selectedGenders.includes('female')} onChange={handleCheckboxChange} name="female" />}
-            label="Female"
-          />
-
-        </FormGroup>
+        <RadioGroup
+          aria-label='gender'
+          name='gender'
+          value={selectedGenders}
+          onChange={handleGenderChange}
+        >
+          <FormControlLabel value="0" control={<Radio />} label="Both" />
+          <FormControlLabel value="1" control={<Radio />} label="Male" />
+          <FormControlLabel value="2" control={<Radio />} label="Female" />
+        </RadioGroup>
 
       </Box>
 

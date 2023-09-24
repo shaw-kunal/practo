@@ -1,15 +1,36 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Autocomplete, TextField } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 import { majorCitiesArray, specialtiesArray } from "./../../db/database.js"
 
 import "./searchBy.css"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { Context } from '../../context/Context.js';
+import { SetCity, SetSpecialist } from '../../context/Action.js';
 
-const SearchBy = () => {
-  const [city, setCity] = useState("Bangalore");
-  const [spcialist, setSpcialist] = useState("General Medicine");
+const SearchBy = ({ navigateToList }) => {
+
+  const [cityRef, setCityRef] = useState("")
+  const [specialistRef, setsetspecialistRef] = useState("")
+  const { city, dispatch, specialist } = useContext(Context)
+   const navigate = useNavigate();
+
+
+  const handleSearch = (e) => {
+    // here  first update the your context api
+    e.preventDefault();
+    dispatch(SetCity(cityRef));
+    dispatch(SetSpecialist(specialistRef)); 
+    {
+      navigateToList && navigate("/list")
+    }
+
+
+  }
+
   return (
+
+
 
     <div className='SearchContainer'>
       <div className='citySearch'>
@@ -20,10 +41,10 @@ const SearchBy = () => {
           renderInput={(params) => <TextField {...params} label="city" />}
           onChange={(event, value) => {
             if (value !== null) {
-              setCity(value.label)
+              setCityRef(value.label)
             }
             else {
-              setCity("Bangalore");
+              setCityRef("");
             }
           }
           } // Update state with the selected value
@@ -40,16 +61,18 @@ const SearchBy = () => {
           renderInput={(params) => <TextField {...params} label="Search Doctor" />}
           onChange={(event, value) => {
             if (value !== null) {
-              setSpcialist(value.label)
+              setsetspecialistRef(value.label)
             } else {
-              setSpcialist("General Medicine");
+              setsetspecialistRef("");
             }
           }}
         />
 
       </div>
 
-      <button className='searchBth'><SearchIcon />search</button>
+      <button className='searchBth' onClick={handleSearch}><SearchIcon />search</button>
+
+  
 
     </div>
 

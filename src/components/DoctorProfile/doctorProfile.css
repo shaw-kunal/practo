@@ -2,18 +2,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
-    /* background-color: antiquewhite; */
+    height: 230px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     width: 80%;
+    padding: 10px 20px; /* Add padding for spacing */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .left {
     flex: 1;
     display: flex;
     align-items: center;
-
+    justify-content: center; /* Center the image horizontally */
+    margin-bottom: 20px; /* Add some spacing between the image and other content */
 }
+
 
 .doctorImage {
     width: 200px;
@@ -25,16 +28,13 @@
     flex: 2;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-
-
-
+    gap: 10px; /* Reduce the gap between elements */
 
 }
-
 .middle .name {
     color: salmon;
     font-size: 20px;
+    cursor: pointer;
 
 }
 
@@ -49,6 +49,7 @@
     font-family: 'Times New Roman', Times, serif;
     font: weight 200;
     color: rgb(119, 115, 115);
+    cursor: pointer;
 }
 
 .middle .city {
@@ -59,37 +60,52 @@
 
 .middle .fees {
     font-family: 'Times New Roman', Times, serif;
-    font: weight 200;
-    color: rgb(13, 13, 13);
+    font: weight 400;
+    color: rgb(86, 84, 84);
+
     
 }
-
+/* Add the dashed border class to fees span */
+.middle .fees.dashed-border {
+    border-bottom: 1px dashed #e7e0e0;
+    padding-bottom: 10px; /* Adjust padding for spacing */
+}
 .middle .partition {
     height: 1px;
 
     border: 1px dashed gery;
 }
 
-.middle .rating{
+
+.middle .rating {
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-weight: 400;
     background-color: #0c9c22;
-
     font-size: 15px;
     color: white;
     width: 100px;
     padding: 3px;
-    border-radius:3px;
+    border-radius: 3px;
 }
+.middle .rating:hover
+{
+    background-color: #39dd52;
+}
+
 
 
 
 .right {
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px; /* Add margin to center the button */
 }
+
+
 
 .meetClinic{
     background-color:#5BD1D7 ;
@@ -103,4 +119,23 @@
 }
 .meetClinic:hover{
     background-color: #35f2fc;
+}
+/* Media query for small screens */
+@media (max-width: 768px) {
+    .profileConainer {
+        flex-direction: column; /* Stack elements vertically on small screens */
+        width: 100%;
+    }
+
+    .left {
+        order: 1; /* Move the image below other content */
+    }
+
+    .middle {
+        order: 2; /* Move the middle content below other content */
+    }
+
+    .right {
+        order: 3; /* Move the button below other content */
+    }
 }

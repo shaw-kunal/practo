@@ -3,7 +3,6 @@ import Navbar from '../../components/navbar/Navbar'
 import "./search.css"
 import SearchBy from '../../components/SearchBy/SearchBy'
 import Filter from '../../components/filter/Filter'
-import DoctorProfile from '../../components/DoctorProfile/DoctorProfile'
 import DoctorList from '../../components/doctorsList/DoctorList'
 
 const Search = () => {

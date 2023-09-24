@@ -1,6 +1,6 @@
 import React from 'react'
 import "./doctorProfile.css"
-import { ThumbUpOffAlt } from '@mui/icons-material'
+import { ThumbUpAlt } from '@mui/icons-material'
 
 const DoctorProfile = ({doctor}) => {
   const approval=  (doctor.rating/5)*100;
@@ -14,11 +14,11 @@ const DoctorProfile = ({doctor}) => {
             </div>
             <div className="middle">
                 <span className="name">{doctor.name}</span>
-                <sapn className="specialist">{doctor.degree}</sapn>
+                <span className="specialist">{doctor.degree}</span>
                 <span className='experience'>{doctor.experience} year of over all experience </span>
                 <span className='city' >{`${doctor.city},${doctor.state}`}</span>
-                <span className='fees'> {doctor.fees!=0 ? `$${doctor.fees}`:"Free Consultant"}</span>
-                <div className="rating"> <ThumbUpOffAlt/> { approval  < 85 ?approval+15:approval}%</div>
+                <span className='fees dashed-border'> {  doctor.fees != 0 ? `$${doctor.fees} Consultation fee at clinic` : "Free Consultant"}</span>
+                <div className="rating"> <ThumbUpAlt/> {' '}{ approval  < 85 ?approval+15:approval}%</div>
             </div>
             <div className="right">
                 <button className='meetClinic'>Book Clinic Visit</button>
